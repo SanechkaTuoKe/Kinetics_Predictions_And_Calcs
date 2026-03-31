@@ -1,8 +1,10 @@
 package org.example.domain
 
     data class ExperimentalData(
-        val id: String,            // айди вида (см ридми)
-        val uvTime: Int,        // время измерения (мин)
-        val releasePercent: Int // процент релиза
+        val id: String,
+
+        val releasePercent: Int,
+        val uvTime: Int,
+        val repeat: Int
     )
 
