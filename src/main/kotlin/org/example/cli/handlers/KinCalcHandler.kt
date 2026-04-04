@@ -2,14 +2,14 @@ package org.example.cli.handlers
 
 import org.example.service.CalculationService
 
-class RelShowHandler: BaseHandler {
+class KinCalcHandler: BaseHandler {
     override fun handle(
         params: List<String>,
         calculationService: CalculationService,
         commandList: Collection<BaseHandler>
     ): Boolean {
-        TODO("Not yet implemented")
+        return TODO("Provide the return value")
     }
 
-    override fun help(): String = "RelShow for see needed releases"
+    override fun help(): String = "KinCalc for calculate reaction order"
 }

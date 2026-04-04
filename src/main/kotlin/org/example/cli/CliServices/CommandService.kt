@@ -11,7 +11,8 @@ class CommandService {
     private val commands: Map<String, BaseHandler> = mapOf(
 
         "help" to HelpHandler(),
-        "exit" to ExitHandler()
+        "exit" to ExitHandler(),
+
     )
 
     fun execute(input: List<String>): Boolean {
