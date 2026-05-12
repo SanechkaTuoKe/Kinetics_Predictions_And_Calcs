@@ -13,5 +13,5 @@ class HelpHandler : BaseHandler {
         return true
     }
 
-    override fun help(): String = "help - Show this help"
+    override fun help(): String = "help - for help"
 }

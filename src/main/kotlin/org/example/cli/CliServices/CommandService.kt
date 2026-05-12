@@ -7,12 +7,12 @@ class CommandService {
 
     private val calculationService = CalculationService()
 
-
     private val commands: Map<String, BaseHandler> = mapOf(
-
         "help" to HelpHandler(),
         "exit" to ExitHandler(),
-
+        "calc" to RelAddHandler(),
+        "kin-calc" to KinCalcHandler(),
+        "kin-manual" to KinCalcManualHandler()
     )
 
     fun execute(input: List<String>): Boolean {
@@ -23,12 +23,13 @@ class CommandService {
 
         val handler = commands[cmd]
         if (handler == null) {
-            println("Error: command not found")
+            println(" Unknown command: '$cmd'")
+            println("   Type 'help' to see available commands")
             return true
         }
 
         return try {
-            handler.handle(params, instrumentService, commands.values)
+            handler.handle(params, calculationService, commands.values)
         } catch (e: Exception) {
             ErrorHandler.handle(e)
             true
